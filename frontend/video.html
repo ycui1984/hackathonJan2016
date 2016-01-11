@@ -2,11 +2,11 @@
 <html> 
 <body> 
 
+<button onclick="normalmode()" type="button">Normal</button>
+<button onclick="sketchmode()" type="button">Sketch</button>
+<button onclick="cartoonmode()" type="button">Cartoon</button>
+<button onclick="evilmode()" type="button">Evil</button><br>
 <button onclick="videochange()" type="button">Change Mode</button><br>
-<button onclick="normalmode()" type="button">Normal</button><br>
-<button onclick="sketchmode()" type="button">Sketch</button><br>
-<button onclick="cartoonmode()" type="button">Cartoon</button><br>
-<button onclick="evilmode()" type="button">Evil</button><br> 
 
 <video id="videoid" controls autoplay>
   <source id="mp4_src" src="3d.mp4" type="video/mp4">
@@ -16,27 +16,35 @@
 
 <script> 
 function normalmode() {
+	var curPos = document.getElementById("videoid").currentTime
 	document.getElementById("mp4_src").src = "3d.mp4";
 	document.getElementById("ogg_src").src = "3d.ogg";
-	document.getElementById("videoid").load();     
+	document.getElementById("videoid").load();
+	document.getElementById("videoid").currentTime = curPos;     
 }
 
 function sketchmode() {
+	var curPos = document.getElementById("videoid").currentTime
 	document.getElementById("mp4_src").src = "sketch.mp4";
 	document.getElementById("ogg_src").src = "sketch.ogg";
 	document.getElementById("videoid").load();
+	document.getElementById("videoid").currentTime = curPos;
 }
 
 function cartoonmode() {
+	var curPos = document.getElementById("videoid").currentTime
 	document.getElementById("mp4_src").src = "cartoon.mp4";
 	document.getElementById("ogg_src").src = "cartoon.ogg";
 	document.getElementById("videoid").load();
+	document.getElementById("videoid").currentTime = curPos;
 }
 
 function evilmode() {
+	var curPos = document.getElementById("videoid").currentTime;
 	document.getElementById("mp4_src").src = "evil.mp4";
 	document.getElementById("ogg_src").src = "evil.ogg";
 	document.getElementById("videoid").load();
+	document.getElementById("videoid").currentTime = curPos;
 }
 
 var click_cnt = 0;
