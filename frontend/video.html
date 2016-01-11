@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<button onclick="videochange()" type="button">Change Mode</button><br>
+ 
+<video id="videoid" controls autoplay>
+  <source id="mp4_src" src="3d.mp4" type="video/mp4">
+  <source id="ogg_src" src="3d.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+
+<script> 
+var click_cnt = 0;
+function videochange() {
+    click_cnt += 1;
+    if (click_cnt == 4) {click_cnt = 0;}
+    if (click_cnt == 1) {
+    	document.getElementById("mp4_src").src = "sketch.mp4";
+    	document.getElementById("ogg_src").src = "sketch.ogg";
+    	document.getElementById("videoid").load();
+    } else if (click_cnt == 2) {
+        document.getElementById("mp4_src").src = "cartoon.mp4";
+        document.getElementById("ogg_src").src = "cartoon.ogg";
+    	document.getElementById("videoid").load();
+    } else if (click_cnt == 3) {
+    	document.getElementById("mp4_src").src = "evil.mp4";
+   	document.getElementById("ogg_src").src = "evil.ogg";
+	document.getElementById("videoid").load();
+    } else if (click_cnt == 0) {
+    	document.getElementById("mp4_src").src = "3d.mp4";
+	document.getElementById("ogg_src").src = "3d.ogg";
+	document.getElementById("videoid").load();
+    } else {
+	alert("cannot be here!");
+    }
+} 
+</script> 
+</body> 
+</html>
