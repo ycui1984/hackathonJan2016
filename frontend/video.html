@@ -3,7 +3,11 @@
 <body> 
 
 <button onclick="videochange()" type="button">Change Mode</button><br>
- 
+<button onclick="normalmode()" type="button">Normal</button><br>
+<button onclick="sketchmode()" type="button">Sketch</button><br>
+<button onclick="cartoonmode()" type="button">Cartoon</button><br>
+<button onclick="evilmode()" type="button">Evil</button><br> 
+
 <video id="videoid" controls autoplay>
   <source id="mp4_src" src="3d.mp4" type="video/mp4">
   <source id="ogg_src" src="3d.ogg" type="video/ogg">
@@ -11,6 +15,30 @@
 </video>
 
 <script> 
+function normalmode() {
+	document.getElementById("mp4_src").src = "3d.mp4";
+	document.getElementById("ogg_src").src = "3d.ogg";
+	document.getElementById("videoid").load();     
+}
+
+function sketchmode() {
+	document.getElementById("mp4_src").src = "sketch.mp4";
+	document.getElementById("ogg_src").src = "sketch.ogg";
+	document.getElementById("videoid").load();
+}
+
+function cartoonmode() {
+	document.getElementById("mp4_src").src = "cartoon.mp4";
+	document.getElementById("ogg_src").src = "cartoon.ogg";
+	document.getElementById("videoid").load();
+}
+
+function evilmode() {
+	document.getElementById("mp4_src").src = "evil.mp4";
+	document.getElementById("ogg_src").src = "evil.ogg";
+	document.getElementById("videoid").load();
+}
+
 var click_cnt = 0;
 function videochange() {
     click_cnt += 1;
