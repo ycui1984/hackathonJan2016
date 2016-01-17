@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<button onclick="normalmode()" type="button">Normal</button>
+<button onclick="sketchmode()" type="button">Sketch</button>
+<button onclick="cartoonmode()" type="button">Cartoon</button>
+<button onclick="evilmode()" type="button">Evil</button><br>
+<!--<button onclick="videochange()" type="button">Change Mode</button><br>-->
+
+<video id="videoid" controls autoplay width="600" height="400" preload="auto">
+  <source id="mp4_src" type="video/mp4">
+  <source id="ogg_src" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video><br>
+
+<script>
+var path
+function normalmode() {
+    var video = document.getElementById("videoid")
+	var curPos = video.currentTime
+	document.getElementById("mp4_src").src = path + "3d.mp4";
+	document.getElementById("ogg_src").src = path + "3d.ogg";
+	video.load();
+	video.currentTime = curPos;
+}
+
+function sketchmode() {
+    var video = document.getElementById("videoid")
+	var curPos = video.currentTime
+	document.getElementById("mp4_src").src = path + "sketch.mp4";
+	document.getElementById("ogg_src").src = path + "sketch.ogg";
+	video.load();
+	video.currentTime = curPos;
+}
+
+function cartoonmode() {
+    var video = document.getElementById("videoid")
+	var curPos = video.currentTime
+	document.getElementById("mp4_src").src = path + "cartoon.mp4";
+	document.getElementById("ogg_src").src = path + "cartoon.ogg";
+	video.load();
+	video.currentTime = curPos;
+}
+
+function evilmode() {
+    var video = document.getElementById("videoid")
+	var curPos = video.currentTime;
+	document.getElementById("mp4_src").src = path + "evil.mp4";
+	document.getElementById("ogg_src").src = path + "evil.ogg";
+	video.load();
+	video.currentTime = curPos;
+}
+
+function grey_click() {
+     var video = document.getElementById("videoid")
+     path = "/static/videos/grey_"
+     document.getElementById("mp4_src").src = "/static/videos/grey_3d.mp4"
+     document.getElementById("ogg_src").src = "/static/videos/grey_3d.ogg"
+     video.load()
+}
+
+
+function bigbuckbunny_click() {
+     var video = document.getElementById("videoid")
+     path = "/static/videos/bigbuckbunny_"
+     document.getElementById("mp4_src").src = "/static/videos/bigbuckbunny_3d.mp4"
+     document.getElementById("ogg_src").src = "/static/videos/bigbuckbunny_3d.ogg"
+     video.load()
+}
+    
+
+function dizzy_click() {
+     var video = document.getElementById("videoid")
+     path = "/static/videos/dizzy_"
+     document.getElementById("mp4_src").src = "/static/videos/dizzy_3d.mp4"
+     document.getElementById("ogg_src").src = "/static/videos/dizzy_3d.ogg"
+     video.load()
+}
+</script>
+<img id="grey" src="/static/posters/grey.jpg" onclick="grey_click()" style="width:200px;height:280px;"/>
+<img id="bigbuckbunny" src="/static/posters/bigbuckbunny.jpg" onclick="bigbuckbunny_click()" style="width:200px;height:280px;"/>
+<img id="dizzy" src="/static/posters/dizzy.jpg" onclick="dizzy_click()" style="width:200px;height:280px;"/><br>
+
+</body>
+</html>

@@ -1,27 +1,13 @@
 
 #include "mode.h"
 
-bool HuluSignDetect(Mat src) {
-    return true;
-}
-
-extern bool openedHulu;
-// Set sketchMode to true if you want a line drawing instead of a painting.
-// Set evilMode to true if you want an "evil" character instead of a "good" character.
-void playLiveOnMode(Mat srcColor, Mat dst, bool sketchMode, bool evilMode, bool detectMode, bool cartoonMode)
+void playLiveOnMode(Mat srcColor, Mat dst, bool sketchMode, bool evilMode, bool tdMode,bool cartoonMode)
 {
-    if (detectMode) {
+    if (tdMode) {
         Size size = srcColor.size();
         Mat target(size, CV_8U);
         srcColor.copyTo(target, srcColor);
-        bool foundSign = HuluSignDetect(target);
-        if (foundSign) {
-            // outline hulu
-            if (openedHulu == false) {
-                system("/usr/bin/open -a \"/Applications/Google Chrome.app\" 'http://www.hulu.com'");
-                openedHulu = true;
-            }
-        }
+        //generate 3d image based on target
         srcColor.copyTo(dst, target);
         return;
     }
